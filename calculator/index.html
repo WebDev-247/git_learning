@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="calculator" role="region" aria-label="Calculator">
+        <div class="display" aria-live="polite" aria-atomic="true">
+            <div id="previous" class="previous-operand" aria-hidden="true"></div>
+            <div id="current" class="current-operand">0</div>
+        </div>
+
+        <div class="keys" role="group" aria-label="Calculator keys">
+            <button type="button" class="key key--function" data-all-clear aria-label="All clear">AC</button>
+            <button type="button" class="key key--function" data-delete aria-label="Delete">DEL</button>
+            <button type="button" class="key key--op" data-operation="/" aria-label="Divide">÷</button>
+
+            <button type="button" class="key" data-number>7</button>
+            <button type="button" class="key" data-number>8</button>
+            <button type="button" class="key" data-number>9</button>
+            <button type="button" class="key key--op" data-operation="*" aria-label="Multiply">×</button>
+
+            <button type="button" class="key" data-number>4</button>
+            <button type="button" class="key" data-number>5</button>
+            <button type="button" class="key" data-number>6</button>
+            <button type="button" class="key key--op" data-operation="-" aria-label="Subtract">−</button>
+
+            <button type="button" class="key" data-number>1</button>
+            <button type="button" class="key" data-number>2</button>
+            <button type="button" class="key" data-number>3</button>
+            <button type="button" class="key key--op" data-operation="+" aria-label="Add">+</button>
+
+            <button type="button" class="key key--zero" data-number>0</button>
+            <button type="button" class="key" data-number>.</button>
+            <button type="button" class="key key--equals" data-equals aria-label="Equals">=</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <noscript>Enable JavaScript to use the calculator.</noscript>
+    
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+:root {
+    --bg: #0f172a;
+    --surface: #111827;
+    --surface-2: #1f2937;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22c55e;
+    --danger: #ef4444;
+    --op: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background: radial-gradient(1200px 800px at 20% 10%, #111827 0%, #0b1220 40%, var(--bg) 100%);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+}
+
+.calculator {
+    width: min(94vw, 380px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+    padding: 16px;
+    backdrop-filter: blur(8px);
+}
+
+.display {
+    background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(17,24,39,0.7));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 12px 14px;
+    min-height: 88px;
+    display: grid;
+    align-content: center;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.previous-operand {
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-align: right;
+    min-height: 1.2em;
+}
+
+.current-operand {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" on, "lnum" on;
+    font-size: 2rem;
+    text-align: right;
+    word-break: break-all;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.key {
+    appearance: none;
+    border: 0;
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text);
+    padding: 14px 12px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.05s ease, background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.key:focus-visible {
+    outline: 2px solid var(--op);
+    outline-offset: 2px;
+}
+
+.key:active {
+    transform: translateY(1px);
+}
+
+.key--op {
+    background: linear-gradient(180deg, rgba(56,189,248,0.22), rgba(56,189,248,0.12));
+    border-color: rgba(56,189,248,0.35);
+}
+
+.key--equals {
+    background: linear-gradient(180deg, rgba(34,197,94,0.28), rgba(34,197,94,0.16));
+    border-color: rgba(34,197,94,0.45);
+}
+
+.key--function {
+    background: linear-gradient(180deg, rgba(239,68,68,0.20), rgba(239,68,68,0.12));
+    border-color: rgba(239,68,68,0.35);
+}
+
+.key--zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 360px) {
+    .current-operand {
+        font-size: 1.7rem;
+    }
+}
+
